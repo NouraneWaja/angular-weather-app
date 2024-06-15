@@ -8,8 +8,6 @@ export class WeatherService {
 
   apiKey='e2e4ac3a6533ab87f2366eaa5f1bd0f5';
 
-  weatherData: any;
-
   constructor(private http:HttpClient) { }
 
   getWeather(city: string){

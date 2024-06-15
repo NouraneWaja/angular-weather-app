@@ -1,4 +1,31 @@
-<form>
-    <input type="text" name="cityName" placeholder="Enter a city name" [(ngModel)]="city">
-    <button type="button" (click)="getWeather()">Get Weather</button>
-</form>
+
+
+    <form>
+        <input type="text" name="cityName" placeholder="Enter a city name" [(ngModel)]="city">
+    </form>
+    <section>
+        <div class="example-button-row">
+          <button mat-raised-button (click)="getWeather()">Rechercher</button>
+          <button mat-raised-button (click)="clearData()">Supprimer</button>
+        </div>
+    </section> 
+
+    <div *ngIf="weatherData">
+        <h2>{{weatherData.name}}</h2>
+        <p>Temperature: {{temp}} °C</p>
+        <p>Humidity: {{weatherData.main.humidity}} %</p>
+        <p>weather: {{weatherData.weather[0].description}}</p>
+        <p>Vitesse du vent : {{ weatherData.wind.speed }} m/s</p>
+    </div>
+
+    <div
+        id="map"
+        leaflet
+        (leafletMapReady)="onMapReady($event)"
+        [leafletOptions]="mapOptions"
+        *ngIf="weatherData"
+    ></div>
+
+    <div *ngIf="error">
+        Incorrect city name. Please try again.
+      </div>
