@@ -1,0 +1,7 @@
+<div *ngIf="weatherData">
+    <h2>{{weatherData.name}}</h2>
+    <p>Temperature: {{convertKelvinToCelsius(weatherData.main.temp)}} °C</p>
+    <p>Humidity: {{weatherData.main.humidity}} %</p>
+    <p>weather: {{weatherData.weather[0].description}}</p>
+    <p>Vitesse du vent : {{ weatherData.wind.speed }} m/s</p>
+</div>

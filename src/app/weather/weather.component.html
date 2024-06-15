@@ -1,0 +1,3 @@
+<app-weather-search (weatherData)="onWeatherDataReceived($event)"></app-weather-search>
+<app-weather-details [weatherData]="weatherData"></app-weather-details>
+<app-map [weatherData]="weatherData" ></app-map>

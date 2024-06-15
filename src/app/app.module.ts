@@ -13,11 +13,25 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { WeatherDetailsComponent } from './weather-details/weather-details.component';
+import { MapComponent } from './map/map.component';
+import { WeatherComponent } from './weather/weather.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatMenuModule } from '@angular/material/menu';
+import {  MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherSearchComponent
+    WeatherSearchComponent,
+    WeatherDetailsComponent,
+    MapComponent,
+    WeatherComponent,
+    WelcomeComponent,
+    NavbarComponent, 
   ],
   imports: [
     BrowserModule,
@@ -28,7 +42,11 @@ import { MatDividerModule } from '@angular/material/divider';
     CommonModule,
     MatButtonModule,
     MatDividerModule, 
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonToggleModule,
+    MatSidenavModule,
   ],
   providers: [WeatherService, provideAnimationsAsync()],
   bootstrap: [AppComponent]

@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    
+    <span class="title">Weather Check</span>
+    
+        <span class="spacer"></span>
+        <button mat-button routerLink="/home">Home</button>
+        <button mat-button [matMenuTriggerFor]="importMenu" >
+            <mat-icon iconPositionEnd>arrow_drop_down</mat-icon>
+            Weather
+        </button>
+        <button mat-raised-button class="login">Login</button>
+        <mat-menu #importMenu>
+            <button mat-menu-item routerLink="/weather">With Map</button>
+            <button mat-menu-item >Without Map</button>
+        </mat-menu>
+    
+</mat-toolbar>
