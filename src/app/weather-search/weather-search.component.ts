@@ -29,6 +29,7 @@ export class WeatherSearchComponent {
 
   clearData() {
     this.weatherData.emit(null);
+    this.city=null;
   }
 
   showErrorMessage(message: string) {

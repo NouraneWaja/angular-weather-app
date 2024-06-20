@@ -1,4 +1,9 @@
-<div class="welcome-container">
+<div *ngIf="!isLoggedIn" class="welcome-container">
     <p>If you want to check the weather...</p>
-    <button mat-raised-button color="primary" class="get-started-button" routerLink="/weather">Start</button>
+    <button mat-raised-button color="primary" class="get-started-button" routerLink="/login">Start</button>
+</div>
+
+<div *ngIf="isLoggedIn"  class="welcome-container">
+    <p>Welcome back! You can now check the weather.</p>
+    <button mat-raised-button color="primary" class="check-weather-button" routerLink="/weather">Check Weather</button>
 </div>

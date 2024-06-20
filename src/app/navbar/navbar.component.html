@@ -8,7 +8,8 @@
             <mat-icon iconPositionEnd>arrow_drop_down</mat-icon>
             Weather
         </button>
-        <button mat-raised-button class="login">Login</button>
+        <button mat-raised-button *ngIf="!isLoggedIn" class="login" routerLink="/login">Sign Up</button>
+        <button mat-raised-button *ngIf="isLoggedIn" class="login" (click)="logout()">Logout</button>
         <mat-menu #importMenu>
             <button mat-menu-item routerLink="/weather" (click)="toggleMap(true)">With Map</button>
             <button mat-menu-item routerLink="/weather" (click)="toggleMap(false)">Without Map</button>

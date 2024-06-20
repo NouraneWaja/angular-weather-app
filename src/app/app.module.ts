@@ -23,6 +23,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import {  MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth.service';
+import { authGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     WeatherComponent,
     WelcomeComponent,
     NavbarComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSidenavModule,
     MatSnackBarModule
   ],
-  providers: [WeatherService, provideAnimationsAsync()],
+  providers: [WeatherService, provideAnimationsAsync(),AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
