@@ -10,8 +10,8 @@
         </button>
         <button mat-raised-button class="login">Login</button>
         <mat-menu #importMenu>
-            <button mat-menu-item routerLink="/weather">With Map</button>
-            <button mat-menu-item >Without Map</button>
+            <button mat-menu-item routerLink="/weather" (click)="toggleMap(true)">With Map</button>
+            <button mat-menu-item routerLink="/weather" (click)="toggleMap(false)">Without Map</button>
         </mat-menu>
     
 </mat-toolbar>

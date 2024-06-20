@@ -22,6 +22,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import {  MatSidenavModule } from '@angular/material/sidenav';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import {  MatSidenavModule } from '@angular/material/sidenav';
     MapComponent,
     WeatherComponent,
     WelcomeComponent,
-    NavbarComponent, 
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +48,7 @@ import {  MatSidenavModule } from '@angular/material/sidenav';
     MatMenuModule,
     MatButtonToggleModule,
     MatSidenavModule,
+    MatSnackBarModule
   ],
   providers: [WeatherService, provideAnimationsAsync()],
   bootstrap: [AppComponent]

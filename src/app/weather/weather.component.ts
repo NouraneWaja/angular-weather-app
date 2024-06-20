@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WeatherService } from '../weather.service';
 
 @Component({
   selector: 'app-weather',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
 export class WeatherComponent {
 
   weatherData: any;
+
+  constructor(public weatherService: WeatherService) {}
 
   onWeatherDataReceived(data: any) {
     this.weatherData = data;

@@ -1,16 +1,11 @@
 
-
-<form>
-    <input type="text" name="cityName" placeholder="Enter a city name" [(ngModel)]="city">
+<form class="search-form">
+    <input type="text" name="cityName" placeholder="Enter a city name" [(ngModel)]="city" class="city-input">
 </form>
 
-<section>
+<section class="button-section">
     <div class="button-row">
-        <button mat-raised-button (click)="getWeather()">Rechercher</button>
-        <button mat-raised-button (click)="clearData()">Supprimer</button>
+        <button mat-raised-button color="primary" (click)="getWeather()">Search</button>
+        <button mat-raised-button color="warn" (click)="clearData()">Clear</button>
     </div>
 </section>
-
-<div *ngIf="error" class="error-message">
-    Incorrect city name. Please try again.
-</div>

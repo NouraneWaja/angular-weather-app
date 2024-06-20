@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WeatherService } from '../weather.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  constructor(private weatherService: WeatherService) {}
+
+  toggleMap(show:boolean){
+    this.weatherService.show=show;
+  }
 }

@@ -1,7 +1,6 @@
 import { Component,Output, EventEmitter } from '@angular/core';
 import { WeatherService } from '../weather.service';
-import { icon, latLng, Map, MapOptions, Marker, tileLayer } from 'leaflet';
-import * as L from 'leaflet';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-weather-search',
@@ -12,20 +11,17 @@ export class WeatherSearchComponent {
 
   city:any;
 
-  error: boolean = false;
+  constructor(private weatherService: WeatherService,private snackBar: MatSnackBar) {}
 
   @Output() weatherData = new EventEmitter<any>();
-
-  constructor(private weatherService: WeatherService) {}
 
   getWeather() {
     this.weatherService.getWeather(this.city).subscribe(
       (res) => {
         this.weatherData.emit(res);
-        this.error = false;
       },
       (err) => {
-        this.error = true;
+        this.showErrorMessage('Incorrect city name. Please try again.');
         this.clearData();
       }
     );
@@ -33,7 +29,14 @@ export class WeatherSearchComponent {
 
   clearData() {
     this.weatherData.emit(null);
-    this.city = '';
+  }
+
+  showErrorMessage(message: string) {
+    this.snackBar.open(message, 'Close', {
+      duration: 5000, // La durée pendant laquelle le message est affiché
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+    });
   }
 
 }

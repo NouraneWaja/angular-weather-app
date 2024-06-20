@@ -1,23 +1,42 @@
-section {
-  display: table;
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; 
 }
 
-.example-label {
-  display: table-cell;
-  font-size: 14px;
-  margin-left: 8px;
-  min-width: 120px;
+.city-input {
+  width: 30%; 
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 20px; 
+  border: 1px solid #ccc; 
+  text-align: center; 
+  outline: none; 
+  height: 0.3rem;
 }
 
-.example-button-row {
-  display: table-cell;
-  max-width: 600px;
+.city-input:focus {
+  border-color: #007bff; /* Changer la couleur de la bordure au focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Ajouter une ombre au focus */
 }
 
-/* Styles pour le message d'erreur */
-.error-message {
-    color: red; /* Couleur du texte en rouge */
-    margin-top: 10px; /* Espacement au-dessus du message d'erreur */
+
+.button-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 13px; /* Ajustez la marge selon vos besoins */
 }
 
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  width: 30%; /* Ajustez la largeur selon vos besoins */
+}
+
+button {
+  flex: 1;
+  margin: 0 10px;
+  font-size: 1rem;
+}
 

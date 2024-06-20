@@ -1,7 +1,25 @@
-<div *ngIf="weatherData">
-    <h2>{{weatherData.name}}</h2>
-    <p>Temperature: {{convertKelvinToCelsius(weatherData.main.temp)}} °C</p>
-    <p>Humidity: {{weatherData.main.humidity}} %</p>
-    <p>weather: {{weatherData.weather[0].description}}</p>
-    <p>Vitesse du vent : {{ weatherData.wind.speed }} m/s</p>
+<div *ngIf="weatherData" >
+    <div class="weather-info">
+        <h2>{{weatherData.name}}</h2>
+        <h3>({{weatherData.weather[0].description}})</h3>
+    </div>
+    
+    <div class="weather-wrapper">
+        <div class="weather-card">
+            <div class="weather-icon sun"></div>
+            <p>{{convertKelvinToCelsius(weatherData.main.temp)}} °C</p>
+            
+        </div>
+
+        <div class="weather-card">
+            <i class="fa-solid fa-droplet weather-icon" style='font-size:60px; color: rgba(0, 89, 255, 0.747);'></i>
+            <p>{{weatherData.main.humidity}} %</p>
+        </div>
+
+        <div class="weather-card">
+            <i class='fas fa-wind weather-icon' style='font-size:60px; color: gray;'></i>
+            <p>{{ weatherData.wind.speed }} m/s</p>
+        </div>
+    </div>
+    
 </div>
